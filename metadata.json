@@ -1,0 +1,8 @@
+{
+  "name": "Rajasthan tour",
+  "description": "Rajasthan Royal Tourism & Travel Planner with Supabase backend integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
