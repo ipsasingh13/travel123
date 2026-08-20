@@ -1,99 +1,172 @@
-# 🏰 Royal Rajasthan Travel & Itinerary Web App
+# 🏰 Royal Rajasthan Tour - AI Travel Planner
 
-A modern, full-stack React & TypeScript travel platform for Rajasthan featuring AI Itinerary Planning, Interactive Maps, Curated Heritage Stays, Regional Food Guides, Live Weather, Packing Checklists, and Digital Postcards.
+A modern, full-stack React & TypeScript travel platform for Rajasthan with AI-powered itinerary planning, heritage stays, desert safaris, and authentic culinary trails.
 
----
+## 🚀 Quick Start
 
-## 🚀 Quick Start in Visual Studio Code
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-Follow these simple steps to run this project locally without any errors:
-
-### 1. Prerequisites
-- **Node.js**: Version `18.x`, `20.x`, or higher installed on your computer. ([Download Node.js](https://nodejs.org/))
-- **VS Code**: Visual Studio Code editor.
-
-### 2. Open Project in VS Code
-1. Extract the downloaded `.zip` archive.
-2. Open VS Code, click **File > Open Folder...** and select the extracted project directory.
-
-### 3. Install Dependencies
-Open the VS Code Terminal (`Ctrl + ~` on Windows/Linux or `Cmd + ~` on Mac) and run:
+### Installation
 
 ```bash
+# Clone repository
+git clone https://github.com/ipsasingh13/travel123.git
+cd travel123
+
+# Install dependencies
 npm install
-```
 
-### 4. Configure Environment Variables (Optional)
-A `.env.example` file is included. By default, built-in cloud endpoints and fallback mock data are already pre-configured. To customize:
-
-Create a `.env` file in the root folder:
-```env
-# Optional Supabase credentials
-VITE_SUPABASE_URL="https://tuvdvrysxjwkzjhlomsx.supabase.co"
-VITE_SUPABASE_ANON_KEY="sb_publishable_YCgsKUyp9NHxEta_ZB0hjg_iIxG7E5D"
-
-# Optional Gemini AI Key for live AI Concierge
-GEMINI_API_KEY=""
-```
-
-### 5. Start the Development Server
-Run the following command in the terminal:
-
-```bash
+# Start development server
 npm run dev
 ```
 
-Then open your browser and navigate to:
-👉 **[http://localhost:3000](http://localhost:3000)** (or the port displayed in your terminal).
+Visit: **http://localhost:3000**
 
----
+## 🛠️ Available Scripts
 
-## 🛠️ Available NPM Scripts
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - TypeScript validation
+- `npm run clean` - Remove build artifacts
 
-- `npm run dev`: Starts the integrated full-stack Node/Express server + Vite frontend.
-- `npm run build`: Compiles the React TypeScript frontend and Node server for production.
-- `npm run start`: Starts the compiled production server (`dist/server.cjs`).
-- `npm run lint`: Runs TypeScript validation checks (`tsc --noEmit`).
+## 📂 Project Structure
 
----
-
-## 📂 Project Architecture
-
-```text
+```
+travel123/
 ├── src/
-│   ├── components/       # UI Components (Planner, Explore, Hero, Weather, Postcards, etc.)
-│   ├── hooks/            # Custom React hooks (usePlannerForm, etc.)
-│   ├── utils/            # Helper utilities (wishlist, storage, sound effects)
-│   ├── data.ts           # Rich datasets for 13+ Rajasthan cities, attractions, stays, food
-│   ├── firebase.ts       # Firebase client integration
-│   ├── supabase.ts       # Supabase data layer with fallback resilience
-│   ├── types.ts          # TypeScript type definitions
-│   ├── index.css         # Tailwind CSS styling
-│   ├── App.tsx           # Main application root
-│   └── main.tsx          # React DOM entry point
-├── public/               # Static assets, sitemap, robots.txt
-├── server.ts             # Express + Vite backend server & API routes
-├── vite.config.ts        # Vite build & plugin configurations
-├── tsconfig.json         # TypeScript compiler configurations
-└── package.json          # Dependencies and script definitions
+│   ├── components/          # UI Components
+│   ├── hooks/               # Custom React hooks
+│   ├── utils/               # Helper functions
+│   ├── App.tsx              # Main app component
+│   ├── main.tsx             # React entry point
+│   └── index.css            # Global styles
+├── server.ts                # Express backend
+├── vite.config.ts           # Vite configuration
+├── tsconfig.json            # TypeScript config
+├── index.html               # HTML template
+├── Dockerfile               # Container config
+├── cloudbuild.yaml          # GCP build config
+└── package.json             # Dependencies
 ```
 
+## ✨ Features
+
+✅ AI-powered trip planner with Gemini integration  
+✅ 13+ Rajasthan city guides (Jaipur, Udaipur, Jodhpur, Jaisalmer, etc.)  
+✅ Heritage hotel listings with affiliate partnerships  
+✅ Desert safari recommendations  
+✅ Multi-language support (English, Hindi, Rajasthani)  
+✅ Dark/Light theme toggle  
+✅ Live weather forecasting  
+✅ Dynamic packing checklists  
+✅ Digital postcard creator  
+✅ WhatsApp/Telegram itinerary sharing  
+
+## 🔌 API Endpoints
+
+### AI & Chat
+- `POST /api/ai/chat` - Rajasthan travel concierge
+- `POST /api/ai/planner` - Generate personalized itinerary
+
+### Data Management
+- `GET /api/itineraries` - List itineraries
+- `POST /api/itineraries` - Create itinerary
+- `POST /api/support-messages` - Submit support request
+
+### Monetization
+- `POST /api/bookings/inquiry` - Booking inquiries
+- `GET /api/partners/hotels` - Affiliate hotel partners
+- `GET /api/partners/transports` - Transport partners
+
+### Health & Analytics
+- `GET /api/health` - Service health check
+- `POST /api/analytics/track` - Event tracking
+
+## 🌐 Deployment
+
+### Google Cloud Run (Recommended)
+
+```bash
+gcloud builds submit --config cloudbuild.yaml
+```
+
+### Docker Local
+
+```bash
+docker build -t rajasthan-tour .
+docker run -p 3000:3000 rajasthan-tour
+```
+
+### Vercel (Frontend only)
+
+```bash
+npm run build
+vercel --prod
+```
+
+See **DEPLOYMENT.md** for full deployment guide.
+
+## 💰 Monetization
+
+See **STARTUP_GUIDE.md** for:
+- Hotel affiliate partnerships (5-10% commission)
+- Lead generation strategies (₹500-2000/lead)
+- Premium experience sales
+- Partner outreach templates
+
+## 🏗️ Architecture
+
+See **ARCHITECTURE.md** for detailed system design, component breakdown, and tech stack.
+
+## 📊 Tech Stack
+
+**Frontend:**
+- React 19 + TypeScript
+- Vite (build tool)
+- Tailwind CSS
+- Lucide React (icons)
+- Motion (animations)
+
+**Backend:**
+- Express.js
+- Node.js
+- Supabase (database)
+- Google Gemini AI
+
+**Deployment:**
+- Docker
+- Google Cloud Run
+- GitHub Actions (CI/CD)
+
+## 🔑 Environment Variables
+
+Create `.env` file:
+
+```env
+NODE_ENV=development
+PORT=3000
+VITE_SUPABASE_URL=your-url
+VITE_SUPABASE_ANON_KEY=your-key
+GEMINI_API_KEY=your-gemini-key
+```
+
+## 📝 License
+
+MIT
+
+## 🤝 Contributing
+
+Contributions welcome! Please read contributing guidelines.
+
+## 💬 Support
+
+Email: hello@rajasthantour.com  
+WhatsApp: +91-XXXXXXXXXX  
+Instagram: @rajasthantour
+
 ---
 
-## ✨ Features Included
-
-1. **AI Royal Trip Planner**: 6-step guided wizard for generating day-by-day morning, afternoon, and evening schedules with real-time costs and transit routes.
-2. **Interactive City Explorer**: Detailed monuments, entry timings, ticket prices, and tips for Jaipur, Jodhpur, Udaipur, Jaisalmer, Pushkar, Bikaner, Ranthambore, Mount Abu, Chittorgarh, Bharatpur, Alwar, Mandawa, and Bundi.
-3. **Live Weather & Season Advisory**: Temperature forecasts, seasonal recommendations, and best visit windows.
-4. **Smart Packing Checklist**: Dynamic checklists customized for Rajasthan desert, city, and temple visits.
-5. **Digital Postcard Creator**: Customizable heritage greeting cards to download and share.
-6. **Heritage Stays & Transport**: Curated boutique Havelis, palaces, luxury camps, and taxi rates.
-7. **Multi-Language Support**: English, हिंदी (Hindi), and मारवाड़ी (Rajasthani).
-8. **Dark / Royal Light Theme**: Seamless switching with persistent preferences.
-
----
-
-## 💡 Troubleshooting Tips
-
-- **Port already in use**: If port 3000 is occupied, run `PORT=3001 npm run dev` (or `set PORT=3001 && npm run dev` on Windows).
-- **Node version error**: Ensure you are running Node 18 or above by typing `node -v`.
+**Built with ❤️ for Rajasthan Tourism**
